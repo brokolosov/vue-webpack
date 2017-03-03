@@ -12,15 +12,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            {{#stylus}}
-            'stylus': 'vue-style-loader!css-loader!stylus'
-            {{/stylus}}
-          }
-          // other vue-loader options go here
-        }
+        loader: 'vue-loader'        
       },
       {
         test: /\.js$/,
