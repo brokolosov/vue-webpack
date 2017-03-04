@@ -10,7 +10,7 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init brokolosov/webpack-simple my-project
+$ vue init brokolosov/vue-webpack my-project
 $ cd my-project
 $ npm install
 $ npm run dev
