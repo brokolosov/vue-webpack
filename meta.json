@@ -20,10 +20,16 @@
        "message": "Use stylus?",
        "default": true
     },
-    "jade": {
+    "pug": {
        "type": "confirm",
        "message": "Use pug/jade?",
        "default": true
+    },
+    "host": {
+       "type": "string",
+       "message": "Use host?",
+       "required": true,
+       "default": "192.168.1.1"
     }
   },
   "completeMessage": "{{#inPlace}}To get started:\n\n  npm install\n  npm run dev.{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev.{{/inPlace}}"
