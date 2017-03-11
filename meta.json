@@ -29,7 +29,6 @@
        "type": "string",
        "message": "Use host?",      
        "label": "host url",
-       "required": true,
        "default": "192.168.1.1"
     }
   },
