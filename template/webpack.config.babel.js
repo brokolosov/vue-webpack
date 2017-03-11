@@ -35,7 +35,7 @@ module.exports = {
         use: ['html-loader', 'pug-html-loader']
       },
       {{/pug}}
-      {{#styl}}
+      {{#stylus}}
       {
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
@@ -43,7 +43,7 @@ module.exports = {
           use: ["css-loader", "stylus-loader"]
         })
       },
-      {{/styl}}
+      {{/stylus}}
       {
         test: /\.(png|jpg|gif|svg)$/,
         use: 'file-loader?name=images/[name].[ext]?[hash]'
