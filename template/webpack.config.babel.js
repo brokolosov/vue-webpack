@@ -29,21 +29,24 @@ module.exports = {
         exclude: /node_modules/,
         use: 'babel-loader'
       },
+      {{#pug}}
       {
         test: /\.pug$/,
         use: ['html-loader', 'pug-html-loader']
       },
+      {{/pug}}
+      {{#styl}}
       {
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: ["css-loader", "stylus-loader"],
-          publicPath: '/dist'
+          use: ["css-loader", "stylus-loader"]
         })
       },
+      {{/styl}}
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: 'file-loader?[name].[ext]?[hash]'
+        use: 'file-loader?name=images/[name].[ext]?[hash]'
       }
     ]
   },
@@ -51,7 +54,9 @@ module.exports = {
   devServer: {
     contentBase: false,
     compress: false,
-    host: '192.168.1.6',
+    {{#host}}
+    host: '{{host}}', 
+    {{/host}}
     port: 8080,
     stats: "errors-only"
   },
@@ -61,8 +66,8 @@ module.exports = {
       template: './src/index.pug'
     }),
     new ExtractTextPlugin({
-      filename: "styles.css",
-      disable: true,
+      filename: "styles/styles.css",
+      disable: false,
       allChunks: true
     })
   ]
