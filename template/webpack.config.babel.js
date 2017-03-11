@@ -9,11 +9,14 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, "./dist"),
-    publicPath: '/dist/',
     filename: './js/bundle.js'
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+      },
       {
         test: /\.css$/,
         use: [
@@ -33,17 +36,14 @@ module.exports = {
       {
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: ["css-loader", "stylus-loader"],
+          fallback: "style-loader",
+          use: ["css-loader", "stylus-loader"],
           publicPath: '/dist'
         })
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
+        use: 'file-loader?[name].[ext]?[hash]'
       }
     ]
   },
@@ -51,7 +51,7 @@ module.exports = {
   devServer: {
     contentBase: false,
     compress: false,
-    host: "192.168.1.6",
+    host: '192.168.1.6',
     port: 8080,
     stats: "errors-only"
   },
