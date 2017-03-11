@@ -27,7 +27,8 @@
     },
     "host": {
        "type": "string",
-       "message": "Use host?",      
+       "message": "Use host?", 
+       "required": true,     
        "label": "host",
        "default": "192.168.1.1"
     }
