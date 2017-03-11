@@ -1,4 +1,4 @@
-# webpack-simple + Jade + Stylus
+# webpack-simple + Pug/Jade + Stylus
 
 > A simple Vue 2.0 Webpack & `vue-loader` setup for quick prototyping. Note this template is not suitable for production - for that you may want to wait for an official 2.0 webpack template.
 
