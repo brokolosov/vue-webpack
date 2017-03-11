@@ -22,7 +22,7 @@
     },
     "jade": {
        "type": "confirm",
-       "message": "Use jade?",
+       "message": "Use pug/jade?",
        "default": true
     }
   },
