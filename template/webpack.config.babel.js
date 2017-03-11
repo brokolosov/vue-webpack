@@ -54,9 +54,7 @@ module.exports = {
   devServer: {
     contentBase: false,
     compress: false,
-    {{#host}}
     host: "{{ host }}", 
-    {{/host}}
     port: 8080,
     stats: "errors-only"
   },
